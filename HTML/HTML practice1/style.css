@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f8f9fa;
+}
+   .container {
+    display: flex;
+    justify-content: center;
+    /* margin-top: 200px; */
+
+ }   
+  .image-card {
+    text-align: center;
+    /* border:2px solid #ccc;  */
+    border-style: double;
+    Border-color: rgb(149, 152, 149);
+    margin: 10px;  
+   }  
+   
+  .image-card img {
+    width: 215px;
+    height: 315px;      
+  } 
+
+  .image-card p {
+    margin: 0;
+  }
+
+  .description{
+    height: 20px;
+    background-color: grey;
+
+  }
+  
+  .text{
+    margin-top: 10px;
+    text-align: center;
+  }
+
+
+   
