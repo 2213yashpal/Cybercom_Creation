@@ -1,0 +1,20 @@
+table,th,td {
+    border: 1px solid black;
+    margin-top:50px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    width: 600px;
+    text-align: center;
+    font-size: 15px;
+    vertical-align:top;
+    text-align: left;
+}
+span{
+    text-decoration: underline;
+    color: blue;
+} 
+thead{
+    background-color:lightgreen;
+}
