@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form action="successfull.html">
+        <fieldset>
+            <legend>Your Address:</legend>
+            <div class="control">
+                <label for="fname">First name</label><input type="text" id="fname" name="fname"><br><br>
+            </div>
+            <div class="control">
+                <label for="lname">Last name</label><input type="text" id="lname" name="lname"><br><br>
+            </div>
+            <div class="control">
+                <label for="street">Street</label><input type="text" id="street" name="street"><br><br>
+            </div>
+            <div class="control">
+                <label for="City">City</label>
+                <input type="text" id="City" name="City"><br><br>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Additional Details</legend>
+            <div class="control">
+                <label for="fname">Biography</label>
+                <textarea id="Biography"></textarea><br><br>
+            </div>
+            <div class="control">
+                <label for="image">Image</label>
+                <input type="file" id="image" name="image"><br><br>
+            </div>
+            <div class="control">
+                <label for="Age Group">Age Group:</label>
+                <select id="age group">
+                    <option>0 to 9 year</option>
+                    <option>10 to 19 year</option>
+                    <option>20 to 29 year</option>
+                    <option>30 to 39 year</option>
+                    <option>40 to 49 year</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Interests</legend>
+            <div class="control">
+                <label for="Hobbies">Hobbies </label>
+                <select id="Hobbies" multiple="">
+                    <option>Playing soccer</option>
+                    <option>Dancing</option>
+                    <option>Gardening</option>
+                    <option>Watching moviesr</option>
+                </select>
+            </div>
+            <div class="control">
+                <label for="Favorite Car?">Favorite Car? </label>
+                <select id="Favorite_Car">
+                    <option>Volvo</option>
+                    <option>Saab</option>
+                    <option>Mercedes</option>
+                    <option>Audi</option>
+                </select>
+            </div>
+            <div class="control">
+                <label for="transport?">Favourite public transport?</label>
+                <select id="transport" multiple="">
+                    <option>Ground</option>
+                    <option>Train</option>
+                    <option>Bus</option>
+                    <option>water</option>
+                </select>
+            </div>
+        </fieldset>
+        <div class="form-group">
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </div>
+    </form>
+</body>
+
+</html>
