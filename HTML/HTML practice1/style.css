@@ -1,45 +1,25 @@
-body {
-  margin: 0;
+.Container{ 
   display: flex;
-  flex-direction: column;
-  justify-content:center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f8f9fa;
+  justify-content: center;
+  margin-top: 50px;  
 }
-   .container {
-    display: flex;
-    justify-content: center;
-    /* margin-top: 200px; */
-
- }   
-  .image-card {
-    text-align: center;
-    /* border:2px solid #ccc;  */
-    border-style: double;
-    Border-color: rgb(149, 152, 149);
-    margin: 10px;  
-   }  
-   
-  .image-card img {
-    width: 215px;
-    height: 315px;      
-  } 
-
-  .image-card p {
-    margin: 0;
-  }
-
-  .description{
-    height: 20px;
-    background-color: grey;
-
-  }
-  
-  .text{
-    margin-top: 10px;
-    text-align: center;
-  }
+.card{
+  height: 315px;
+  width: 215px;
+  background-color: #303330;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box{
+  border: 1px solid black;
+  background-color: #b9b0b0;
+  text-align: center;
+  margin: 10px;
+}
+p{
+  text-align: center;
+}
 
 
-   
