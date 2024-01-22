@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bus Booking Form</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Bus Booking Form</h2>
+    <form id="busBookingForm">
+      <label for="fullName">Full Name:</label>
+      <input type="text" id="fullName" name="fullName">
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email">
+
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" name="phone">
+
+      <label for="destination">Destination:</label>
+      <input type="text" id="destination" name="destination">
+
+      <label for="departureDate">Departure Date:</label>
+      <input type="date" id="departureDate" name="departureDate">
+      <div class="btn">
+        <button type="submit">Book Now</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      $("#busBookingForm").validate({
+        rules: {
+          fullName: "required",
+          email: {
+            required: true,
+            email: true
+          },
+          phone: "required",
+          destination: "required",
+          departureDate: "required",
+
+        },
+        messages: {
+          fullName: "Please enter your full name",
+          email: {
+            required: "Please enter your email address",
+            email: "Please enter a valid email address"
+          },
+          phone: "Please enter your phone number",
+          destination: "Please enter your destination",
+          departureDate: "Please enter the departure date",
+        },
+        submitHandler: function (form) {
+          alert("Form submitted successfully!");
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>

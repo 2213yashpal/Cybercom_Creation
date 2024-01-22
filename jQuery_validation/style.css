@@ -1,0 +1,44 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background:rgb(98, 100, 100);
+  }
+h2{
+    text-align: center;
+}
+  form {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #1d0f0f;
+    border-radius: 5px; 
+    background: #cbbcbc;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+.btn{
+    text-align: center;
+}
+  button {
+    background-color: rgb(67, 70, 70);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+  }
+
+  label.error {
+    color: red;
+  }
