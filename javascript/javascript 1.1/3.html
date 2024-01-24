@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Click Text Change</title>
+</head>
+<body>
+
+    <h1>Button Click Text Change Example</h1>
+
+    <button onclick="changeText('paragraph1')">Change Text for Paragraph 1</button>
+    <button onclick="changeText('paragraph2')">Change Text for Paragraph 2</button>
+    <button onclick="changeText('paragraph3')">Change Text for Paragraph 3</button>
+
+    <p id="paragraph1">This is the text for paragraph 1.</p>
+    <p id="paragraph2">This is the text for paragraph 2.</p>
+    <p id="paragraph3">This is the text for paragraph 3.</p>
+
+    <script>
+        function changeText(paragraphId) {
+            var paragraph = document.getElementById(paragraphId);
+
+            if (paragraphId === 'paragraph1') {
+                paragraph.innerHTML = "text changed for paragraph 1.";
+            } else if (paragraphId === 'paragraph2') {
+                paragraph.innerHTML = "Different text for paragraph 2.";
+            } else if (paragraphId === 'paragraph3') {
+                paragraph.innerHTML = "Text changed for paragraph 3.";
+            }
+        }
+    </script>
+
+</body>
+</html>
