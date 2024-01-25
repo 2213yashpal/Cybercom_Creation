@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array of Objects</title>
+</head>
+<body>
+
+    <h1>Array of Objects</h1>
+
+    <script>
+        var people = [
+            { name: "yashpal", age: 25, city: "Cityville" },
+            { name: "rahul", age: 30, city: "Townsville" },
+            { name: "Bob Johnson", age: 28, city: "Villageville" }
+        ];
+
+        for (var i = 0; i < people.length; i++) {
+           
+            var person = people[i];
+            
+            console.log("Person " + (i + 1) + " Information:");
+            console.log("Name: " + person.name);
+            console.log("Age: " + person.age);
+            console.log("City: " + person.city);
+            console.log("\n");
+        }
+    </script>
+
+</body>
+</html>

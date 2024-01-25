@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Change Example</title>
+</head>
+<style>
+    button {
+        margin-right: 50px;
+        margin-top: 10px;
+    }
+    img{
+        width:20%;
+        margin-right: 20px;
+    }
+</style>
+<body>
+
+    <h1>Image Change Example</h1>
+
+    
+
+    <img id="image1" src="dashbord.png" alt="Image 1">
+    <img id="image2" src="login.png" alt="Image 2">
+    <img id="image3" src="Screenshot 21.png" alt="Image 3">
+
+    <div>
+    <button onclick="changeImage('image1')">Change Image 1</button>
+    <button onclick="changeImage('image2')">Change Image 2</button>
+    <button onclick="changeImage('image3')">Change Image 3</button>
+</div>
+
+    <script>
+        function changeImage(imageId) {
+            var image = document.getElementById(imageId);
+
+            if (imageId === 'image1') {
+                image.src = "flower2.jpg";
+            } else if (imageId === 'image2') {
+                image.src = "flower3.jpg";
+            } else if (imageId === 'image3') {
+                image.src = "flower1.jpg.jpg";
+            }
+        }
+    </script>
+
+</body>
+</html>

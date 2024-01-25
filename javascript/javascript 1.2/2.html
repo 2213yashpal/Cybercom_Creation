@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Information</title>
+</head>
+<body>
+
+    <h1>Product Information</h1>
+
+    <script>
+        const product = {
+            name: "mobile",
+            price: 20000,
+            quantityInStock: 10
+        };
+
+        function calculateTotalCost(quantity) {
+            if (quantity <= 0) {
+                return "Quantity should be greater than 0";
+            }
+
+            if (quantity > product.quantityInStock) {
+                return "Insufficient stock.";
+            }
+
+            var totalCost = product.price * quantity;
+            return "Total cost for " + quantity + " " + product.name + "(s): $"  + totalCost.toFixed(2);
+        }
+
+        var specifiedQuantity = 4;
+        var totalCostResult = calculateTotalCost(specifiedQuantity);
+
+        console.log(totalCostResult);
+    </script>
+
+</body>
+</html>
