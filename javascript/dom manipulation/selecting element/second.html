@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getelementbyclass example</title>
+</head>
+<body>
+    <div class="exampleclass">
+        This is a div with class exampleclass.
+    </div>
+
+    <script>
+        let myElement = document.getElementsByClassName("exampleclass");
+        console.log(myElement.textContent);
+
+        let updated = document.getElementsByClassName("exampleclass").innerHTML ="this is updated";
+        console.log(updated);
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>createTextNode Example</title>
+</head>
+<body>
+
+<div id="parentElement">
+    <p>This is an existing paragraph.</p>
+</div>
+
+<script>
+    const parentElement = document.getElementById('parentElement');
+
+    const newText = document.createTextNode('This is a dynamically created text node.');
+
+    parentElement.appendChild(newText);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getelementbyid example</title>
+</head>
+<body>
+    <div id="exampleDiv">
+        This is a div with an ID.
+    </div>
+
+    <script>
+        let myElement = document.getElementById("exampleDiv");
+        console.log(myElement.textContent);
+
+        let updated = document.getElementById("exampleDiv").innerHTML ="this is updated";
+        console.log(updated);
+    </script>
+</body>
+</html>

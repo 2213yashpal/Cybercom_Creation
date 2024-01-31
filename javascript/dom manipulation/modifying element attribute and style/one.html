@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify Element Attributes</title>
+</head>
+<body>
+
+<div id="myElement" data-custom="example-value">Original Content</div>
+
+<script>
+    var element = document.getElementById("myElement");
+
+    var customValue = element.getAttribute('data-custom');
+
+    document.write(customValue)
+
+    console.log(customValue); 
+</script>
+
+</body>
+</html>

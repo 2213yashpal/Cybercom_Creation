@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify Element Classes</title>
+    <style>
+        .original-class {
+            color: blue;
+        }
+        .new-class {
+            font-weight: bold;
+        }
+        .toggle-class {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+<div id="myElement" class="original-class">Original Content</div>
+
+<script>
+    // Get the element by its ID
+    var element = document.getElementById("myElement");
+
+    element.classList.add('new-class');
+
+    element.classList.remove('original-class');
+
+    element.classList.toggle('toggle-class');
+
+    var hasNewClass = element.classList.contains('new-class');
+
+    // Display the updated class list and the result of the check in the console
+    console.log(element.classList); 
+    console.log(hasNewClass); 
+</script>
+
+</body>
+</html>

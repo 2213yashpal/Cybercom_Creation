@@ -10,16 +10,16 @@
 </head>
 <body>
   <div class="main-container">
-    <form action="Information.php" >
+    <form action="result.html" ">
       <fieldset>
         <legend>Personal Information</legend>
         <div class="container">
           <label for="first_name">First name:</label>
-          <input id="first_name" type="text" required/>
+          <input id="firstname" type="text" required/>
         </div>
         <div class="container">
           <label for="last_name">Last name:</label>
-          <input id="last_name" type="text" />
+          <input id="lastname" type="text" />
         </div>
         <div class="container">
           <label for="birthday">Date of Birth:</label>
@@ -40,7 +40,7 @@
       <div class="container">
         <label for="email">Email:</label>
         <input id="email" type="email" required/>
-        <sub style="margin-left:18rem;">(Your email address will be your username)</sub>
+        <!-- <sub style="margin-left:18rem;">(Your email address will be your username)</sub> -->
         </div>
         <div class="container">
           <label for="reemail">Re-type Email:</label>
@@ -48,7 +48,7 @@
           </div>
           <div class="container">
           <label for="password">Password:</label>
-          <sub style="margin-left:3px;">(Min. 8 characters,1 number,case-sensitive)</sub>
+          <!-- <sub style="margin-left:3px;">(Min. 8 characters,1 number,case-sensitive)</sub> -->
           <input id="password" type="password" required/>
         </div>
         <div class="container">
@@ -57,7 +57,7 @@
         </div>
         <div class="container">
           <label for="security_question">Security Question:</label>
-          <select id="gender">
+          <select id="securityque">
             <option value="">Choose a security question</option><span>&#63;</span>
     <option value="hometown">What is your hometown?</option>
     <option value="color">What is your favourite color?</option>
@@ -105,10 +105,34 @@
     </div>
     </fieldset>
     <div class="submit">
-      <button type="submit">Submit</button>
+      <button type="submit" onclick="saveFormData()">Submit</button>
       <button type="reset">Reset</button>
     </div>
     </form>
   </div>
+
+  <script>
+    function saveFormData() {
+      var firstname = document.getElementById('firstname').value;
+      var lastname = document.getElementById('lastname').value;
+      var Dob = document.getElementById('birthday').value;
+      var gender = document.getElementById('gender').value;
+      var email = document.getElementById('email').value;
+
+      var password = document.getElementById('password').value;
+      var securityque = document.getElementById('securityque').value;
+      var securityanswer = document.getElementById('securityanswer').value;
+      var address = document.getElementById('address').value;
+      var city = document.getElementById('city').value;
+      var state = document.getElementById('securityQuestion').value;
+      var zipcode = document.getElementById('zipcode').value;
+      var telephone = document.getElementById('telephone').value;
+
+      localStorage.setItem('formData', JSON.stringify({
+        firstname, lastname, Dob, gender, email,
+        retype_email, password, repassword, securityque, securityanswer, address, city, state, zipcode,telephone
+      }));
+    }
+  </script>
 </body>
 </html>

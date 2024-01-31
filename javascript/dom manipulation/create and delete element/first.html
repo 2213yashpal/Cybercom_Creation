@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating Elements</title>
+</head>
+<body>
+
+<!-- Initial HTML content-->
+<div id="container">
+    <p id="existingElement">Existing Content</p>
+</div> 
+
+<script>
+
+    let newElement = document.createElement('div');
+    newElement.className="main";
+    newElement.id="myid";
+    newElement.setAttribute("title","generated title");
+    newElement.style.backgroundColor="green";
+    newElement.textContent = 'New Content';
+
+    // Appending the new element to an existing element
+    let container = document.getElementById('container');
+    container.appendChild(newElement);
+
+    // Creating and appending a text node
+    let textNode = document.createTextNode(' Appended Text Node');
+    newElement.appendChild(textNode);
+
+</script>
+
+</body>
+</html>

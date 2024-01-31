@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management</title>
+    <link rel="stylesheet" href="style.css">
+  
+</head>
+
+<body>
+    <div class="container">
+        <h1>Product Management</h1>
+
+        <form id="productForm" onsubmit="validateForm(event)">
+            <div class="form-row">
+                <div class="input-data">
+                    <label for="productTitle">Title:</label>
+                    <input type="text" id="productTitle" name="productTitle" >
+                    <span id="titleError" class="error"></span><br>
+                </div>
+                <div class="input-data">
+                    <label for="description">Price:</label>
+                    <input type="number" id="price" name="price" ></input>
+                    <span id="priceError" class="error"></span><br>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="input-data textarea">
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" ></textarea>
+                    <span id="descriptionError" class="error"></span><br>
+                </div>
+            </div>
+            <div class="form-row">
+                <button type="submit">Save</button>
+            </div>
+        </form>
+   
+   
+    <div class="table-container">
+    <h2>Product List</h2>
+
+    <table id="productTable">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Description</th>                
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Product list will be dynamically added here -->
+        </tbody>
+    </table>
+
+</div>
+</div>
+
+<script>
+    // Load existing products from localStorage
+    var products = JSON.parse(localStorage.getItem('products')) || [];
+
+    function saveProductsToLocalStorage() {
+        localStorage.setItem('products', JSON.stringify(products));
+        displayProducts();
+    }
+
+    function validateForm(event) {
+        event.preventDefault();
+
+        document.getElementById('titleError').textContent = '';
+        document.getElementById('priceError').textContent = '';
+        document.getElementById('descriptionError').textContent = '';
+
+        var productTitle = document.getElementById('productTitle').value.trim();
+        var price = document.getElementById('price').value;
+        var description = document.getElementById('description').value.trim();
+
+        if (productTitle === '') {
+            document.getElementById('titleError').textContent = 'Title is required.';
+            return;
+        }
+        if (isNaN(price) || price <= 0) {
+            document.getElementById('priceError').textContent = 'Please enter a price.';
+            return;
+        }
+
+        if (description === '') {
+            document.getElementById('descriptionError').textContent = 'Description is required.';
+            return;
+        }
+
+     
+
+        // If editing, update the existing product; otherwise, add a new product
+        if (editingIndex !== null) {
+            products[editingIndex] = {
+                title: productTitle,
+                price: parseFloat(price).toFixed(2),
+                description: description,
+            };
+            editingIndex = null; // Reset editingIndex after editing
+        } else {
+            products.push({
+                title: productTitle,
+                price: parseFloat(price).toFixed(2),
+
+                description: description,
+            });
+        }
+
+        saveProductsToLocalStorage();
+
+        // Reset the form after submission
+        document.getElementById('productForm').reset();
+    }
+
+    function displayProducts() {
+        var tableBody = document.querySelector('#productTable tbody');
+        tableBody.innerHTML = '';
+
+        products.forEach(function (product, index) {
+            var row = tableBody.insertRow();
+
+            var titleCell = row.insertCell(0);
+            titleCell.textContent = product.title;
+
+            var priceCell = row.insertCell(1);
+            priceCell.textContent = '$' + product.price;
+
+            var descriptionCell = row.insertCell(2);
+            descriptionCell.textContent = product.description;
+
+          
+
+            var actionCell = row.insertCell(3);
+            var editButton = document.createElement('button');
+            editButton.textContent = 'Edit';
+          
+            editButton.addEventListener('click', function () {
+                editProduct(index);
+            });
+            actionCell.appendChild(editButton);
+
+            var deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Delete';
+            deleteButton.addEventListener('click', function () {
+                deleteProduct(index);
+            });
+            actionCell.appendChild(deleteButton);
+        });
+    }
+
+    function editProduct(index) {
+        var product = products[index];
+
+        document.getElementById('productTitle').value = product.title;
+        document.getElementById('description').value = product.description;
+        document.getElementById('price').value = product.price;
+
+        editingIndex = index;
+    }
+
+    function deleteProduct(index) {
+        if (confirm('Are you sure you want to delete this product?')) {
+            products.splice(index, 1);
+            saveProductsToLocalStorage();
+        }
+    }
+
+    // Initialize the table on page load
+    displayProducts();
+
+    // Variable to keep track of the index being edited (if any)
+    var editingIndex = null;
+</script>
+
+
+</body>
+
+</html>

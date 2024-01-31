@@ -13,17 +13,17 @@
         <fieldset>
             <legend>Your Address:</legend>
             <div class="control">
-                <label for="fname">First name</label><input type="text" id="fname" name="fname"><br><br>
+                <label for="fname">First name</label><input type="text" id="fname" name="fname" required><br><br>
             </div>
             <div class="control">
-                <label for="lname">Last name</label><input type="text" id="lname" name="lname"><br><br>
+                <label for="lname">Last name</label><input type="text" id="lname" name="lname" required><br><br>
             </div>
             <div class="control">
-                <label for="street">Street</label><input type="text" id="street" name="street"><br><br>
+                <label for="street">Street</label><input type="text" id="street" name="street" required><br><br>
             </div>
             <div class="control">
                 <label for="City">City</label>
-                <input type="text" id="City" name="City"><br><br>
+                <input type="text" id="City" name="City" required><br><br>
             </div>
         </fieldset>
 
@@ -31,15 +31,15 @@
             <legend>Additional Details</legend>
             <div class="control">
                 <label for="fname">Biography</label>
-                <textarea id="Biography"></textarea><br><br>
+                <textarea id="Biography" required></textarea><br><br>
             </div>
             <div class="control">
                 <label for="image">Image</label>
-                <input type="file" id="image" name="image"><br><br>
+                <input type="file" id="image" name="image" required><br><br>
             </div>
             <div class="control">
                 <label for="Age Group">Age Group:</label>
-                <select id="age group">
+                <select id="age group" required>
                     <option>0 to 9 year</option>
                     <option>10 to 19 year</option>
                     <option>20 to 29 year</option>
@@ -53,7 +53,7 @@
             <legend>Interests</legend>
             <div class="control">
                 <label for="Hobbies">Hobbies </label>
-                <select id="Hobbies" multiple="">
+                <select id="Hobbies" multiple="" required>
                     <option>Playing soccer</option>
                     <option>Dancing</option>
                     <option>Gardening</option>
@@ -62,7 +62,7 @@
             </div>
             <div class="control">
                 <label for="Favorite Car?">Favorite Car? </label>
-                <select id="Favorite_Car">
+                <select id="Favorite_Car"required>
                     <option>Volvo</option>
                     <option>Saab</option>
                     <option>Mercedes</option>
@@ -71,7 +71,7 @@
             </div>
             <div class="control">
                 <label for="transport?">Favourite public transport?</label>
-                <select id="transport" multiple="">
+                <select id="transport" multiple="" required>
                     <option>Ground</option>
                     <option>Train</option>
                     <option>Bus</option>

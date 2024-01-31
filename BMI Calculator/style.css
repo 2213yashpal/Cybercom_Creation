@@ -42,12 +42,14 @@ body {
     font-weight: bold;
   }
 
-  .underweight { color: #2196F3; }
+  .underweight {color: #2196F3; }
   .normal { color: #4CAF50; }
   .overweight { color: #FFC107; }
   .obese { color: #F44336; } 
 
   .error{
     color: red;
-
   }
+ span .error{
+  align-content: start;
+ }

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify Element Content</title>
+</head>
+<body>
+
+<div id="myElement">Original Text Content</div>
+
+<script>
+    let element = document.getElementById("myElement");
+
+    element.textContent = "New Text Content";
+
+    element.textContent += " Additional Text";
+
+    console.log(element.textContent);
+    
+</script>
+
+</body>
+</html>

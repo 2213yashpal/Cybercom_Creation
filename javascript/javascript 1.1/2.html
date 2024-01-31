@@ -3,49 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>js practice</title>
+    <title>Dynamic List Example</title>
+    <style>
+        #itemList {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #itemList li {
+            margin-bottom: 5px;
+        }
+    </style>
 </head>
 <body>
-    <h1>List Manipulation Example</h1>
 
-    <ul id="fruits">
-        <li>apple</li>
-        <li> banana</li>
-        <li>grapes</li>
-        <li>mango</li>
-    </ul>
+<h1>Dynamic List Example</h1>
 
-    <label for="newItem">Add new item:</label>
-    <input type="text" id="newItem" placeholder="Enter item text">
-    <button onclick="addItem()">Add Item</button><br><br>
+<ul id="itemList">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+</ul>
 
-   
-    <label for="removeItem">Remove item by index:</label>
-    <input type="number" id="removeItem" placeholder="Enter item index">
-    <button onclick="removeItem()">Remove Item</button>
+<input type="text" id="newItem" placeholder="Enter a new item">
+<button onclick="addItem()">Add Item</button>
 
-    <script>
-        function addItem() {
-            let newItemText = document.getElementById("newItem").value;
-            let fruitList = document.getElementById("fruits");
-            let newItem = document.createElement("li");
+<input type="text" id="removeItemIndex" placeholder="Enter index to remove">
+<button onclick="removeItem()">Remove Item</button>
+
+<script>
+    function addItem() {
+        var newItemText = document.getElementById("newItem").value;
+        if (newItemText.trim() !== "") {
+            var itemList = document.getElementById("itemList");
+            var newItem = document.createElement("li");
             newItem.appendChild(document.createTextNode(newItemText));
-            fruitList.appendChild(newItem);
-            }      
-            
-            function removeItem(){
-                var fruitList = document.getElementById("fruitList");
-                var lastItem = fruitList.lastElementChild;
+            itemList.appendChild(newItem);
+            document.getElementById("newItem").value = "";
+        }
+    }
 
-                if (indexToRemove >= 0 && indexToRemove < fruitList.children.length) {
-                fruitList.removeChild(fruitList.children[indexToRemove]);
-            } else {
-                alert("Invalid index. Please enter a valid index to remove.");
-            }
-            }
-        };
-            
-    </script>
+    function removeItem() {
+        var removeIndex = parseInt(document.getElementById("removeItemIndex").value);
+        var itemList = document.getElementById("itemList");
+        var listItems = itemList.getElementsByTagName("li");
+
+        if (removeIndex >= 1 && removeIndex <= listItems.length) {
+            itemList.removeChild(listItems[removeIndex - 1]);
+            document.getElementById("removeItemIndex").value = "";
+        } else {
+            alert("Invalid index. Please enter a valid index to remove an item.");
+        }
+    }
+</script>
 
 </body>
 </html>

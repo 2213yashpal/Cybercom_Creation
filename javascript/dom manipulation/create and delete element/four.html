@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>replaceChild Example</title>
+</head>
+<body>
+
+<!-- Existing HTML content -->
+<div id="parentElement">
+    <p>This is the parent element.</p>
+    <span id="oldChild">Old Child Element</span>
+</div>
+
+<script>
+    let parentElement = document.getElementById('parentElement');
+
+    let newChild = document.createElement('span');
+    newChild.textContent = 'New Child Element';
+
+    let oldChild = document.getElementById('oldChild');
+
+    parentElement.replaceChild(newChild, oldChild);
+</script>
+
+</body>
+</html>

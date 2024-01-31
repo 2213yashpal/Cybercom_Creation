@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify Element Content with insertAdjacentHTML</title>
+</head>
+<body>
+
+<div id="myElement">Original Content</div>
+
+<script>
+    // Get the element by its ID
+    var element = document.getElementById("myElement");
+
+    // Insert HTML before the element
+    element.insertAdjacentHTML('beforebegin', '<p>New Content Before</p>');
+
+    // Insert HTML inside the element, before its first child
+    element.insertAdjacentHTML('afterbegin', '<strong>New Content at the Beginning</strong>');
+
+    // // Insert HTML inside the element, after its last child
+    element.insertAdjacentHTML('beforeend', '<p>New Content at the End</p>');
+
+    // // Insert HTML after the element
+    element.insertAdjacentHTML('afterend', '<div>New Content After</div>');
+</script>
+
+</body>
+</html>

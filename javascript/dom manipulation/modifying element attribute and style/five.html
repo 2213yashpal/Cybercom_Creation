@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify Element Class Name</title>
+    <style>
+        .original-class {
+            color: blue;
+        }
+        .new-class {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div id="myElement" class="original-class">Original Content</div>
+
+<script>
+
+    var element = document.getElementById("myElement");
+
+    var currentClass = element.className;
+
+    console.log(currentClass); 
+
+    
+    element.className = 'new-class';
+
+    console.log(element.className);
+</script>
+
+</body>
+</html>
