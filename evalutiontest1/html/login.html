@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login form</title>
+    <link rel="stylesheet" href="/stylesheet/style.css">
+</head>
+<body>
+    <div class="container">
+        
+        <form id="loginform" >
+            <h1>Login</h1>
+            <div>
+            <input type="email" name="email" placeholder="Email" id="email">
+        </div>
+        <div>
+            <input type="password" name="password" placeholder="Password" id="email">
+        </div>
+        <div><button onclick="validate()" ondblclick="" >Login</button></div>
+        <div style="text-align:center">OR</div>
+            <div><button  onclick="location.href='dashboard.html'">Register Now</button></div>
+        </form>
+    </div>
+</body>
+<script>
+    function validate(){
+        // event.defaultPrevented();
+        var emailstattic="yashpal@gmail.com";
+        var passwordstatic=12345;
+       var email = document.getElementById("email").value;
+       var password = document.getElementsByName("password")[0].value;
+       if(email == emailstattic || password == passwordstatic){
+        alert("Logged In Successfully!"); 
+        
+        }else{
+           alert('Please enter valid credentials');   
+        }
+    }
+       
+</script>
+
+</html>
+

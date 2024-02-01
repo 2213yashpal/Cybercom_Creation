@@ -1,0 +1,30 @@
+body{
+    padding:0;
+    margin:0;
+}
+.row {
+    width: 200px;
+    height:800px;
+    background-color: #ca1a1a;
+    
+}
+.row a{
+    margin-top: 30px;
+}
+.container{
+    display: flex;
+}
+
+a{
+    text-decoration: none;
+    display: block;
+    margin:20px; 
+    color: #fff;
+   
+}  
+
+.card{
+    width:50%;
+    height: 30px;
+    background-color: #c12525;
+}

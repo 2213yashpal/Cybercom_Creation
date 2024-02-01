@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login form</title>
+    <link rel="stylesheet" href="/stylesheet/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <form id="loginform" >
+            <h1>Registration</h1>
+            <div>
+                <input type="name" name="name" placeholder="Name" id="name" required>
+                <span id="nameError" class="error"></span>
+            </div>
+            <div>
+                <input type="email" name="email" placeholder="Email" id="email" required>
+                <span id="emailError" class="error"></span>
+
+            </div>
+            <div>
+                <input type="password" name="password" placeholder="Password" id="email" required>
+                <span id="passwordError" class="error"></span>
+
+            </div>
+            <div>
+                <input type="password" name="confirmpassword" placeholder="Confirm Password" id="email" required>
+            </div>
+            <div>
+                <select >
+                    <option value="male">jasdan</option>
+                    <option value="Rajkot">Rajkot</option>
+                    <option value="Ahemedabad">Ahemedabad</option>
+                </select>   
+            </div>
+            <div>
+                <select >
+                    <option value="male">gujrat</option>
+                    <option value="Rajkot">rajasthan</option>
+                    <option value="Ahemedabad">pune</option>
+                </select>   
+            </div>
+            <div>
+                <!-- <chekbox>
+                    Terms &  Conditions 
+                </chekbox> -->
+            </div>
+            <div><button onClick="validate()" type="submit">Register </button></div>
+        </form>
+    </div>
+</body>
+<script>
+    const name = document.getElementById("name").value;
+    const email=document.getElementById("email").value;
+    const password=document.getElementById("password").value;
+    const city=document.getElementById("city").value;
+    const state=document.getElementById("state").value;
+
+    localStorage.setItem("formdata",jsonStringify(name,email,password,city,state));
+
+    function validate(){
+        document.getElementById('nameError').textContent = '';
+        document.getElementById('emailError').textContent = '';
+        document.getElementById('passwordError').textContent = '';
+
+        var name = document.getElementById('name').value.trim();
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value.trim();
+
+        if (name === '') {
+            document.getElementById('nameError').textContent = 'name is required.';
+            return;
+        }
+        if (name === '') {
+            document.getElementById('emailError').textContent = 'email is required.';
+            return;
+        }
+     
+
+    }
+</script>
+
+</html>

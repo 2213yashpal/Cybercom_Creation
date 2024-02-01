@@ -1,0 +1,43 @@
+*{
+    padding: 0;
+    margin: 0;
+    
+}
+body{
+    background-color: #bfa6a6;
+}
+form{
+    background-color:#d6f385;
+    border: 1 solid rgba(255,255,255,0.);
+    padding: 20px;
+  
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+input{
+    width:20rem;
+    height: 30px;
+    margin:10px;
+}
+button{
+    width:20rem;
+    height: 30px;
+    background-color: #158f19;
+    margin:10px;
+    color: #faf0f0;
+    border-radius: 5px;
+}
+h1{
+    text-align: center;
+    margin-bottom:10px;
+}
+select{
+    width: 20rem;
+    height:30px;
+    margin:10px;
+}
