@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+</head>
+<body>
+    <h1>Shopping Cart</h1>
+    <div id="items"></div>
+    <button onclick="displayCart()">View Cart</button>
+    <script>
+        // Sample products
+        const products = [
+            { id: 1, name: 'Product 1', price: 10 },
+            { id: 2, name: 'Product 2', price: 20 },
+            { id: 3, name: 'Product 3', price: 30 }
+        ];
+
+        // Initialize cart
+        let cart = [];
+
+        // Function to display products
+        function displayProducts() {
+            const itemsContainer = document.getElementById('items');
+            itemsContainer.innerHTML = '';
+            products.forEach(product => {
+                const itemDiv = document.createElement('div');
+                itemDiv.innerHTML = `
+                    <p>${product.name} - $${product.price}</p>
+                    <button onclick="addToCart(${product.id})">Add to Cart</button>
+                `;
+                itemsContainer.appendChild(itemDiv);
+            });
+        }
+
+        // Function to add item to cart
+        function addToCart(productId) {
+            const productToAdd = products.find(product => product.id === productId);
+            cart.push(productToAdd);
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+
+        // Function to display cart
+        function displayCart() {
+            const savedCart = localStorage.getItem('cart');
+            if (savedCart) {
+                cart = JSON.parse(savedCart);
+                const cartItems = cart.map(item => `${item.name} - $${item.price}`);
+                alert(`Items in Cart: \n${cartItems.join('\n')}`);
+            } else {
+                alert('Cart is empty');
+            }
+        }
+
+        // Display initial products
+        displayProducts();
+    </script>
+</body>
+</html>
