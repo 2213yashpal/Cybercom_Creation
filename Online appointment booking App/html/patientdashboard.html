@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard</title>
+    <link rel="stylesheet" href="/stylesheet/patientdashboard.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Book Appointment</h2>
+        <form id="appointmentForm">
+            <div class="form-group">
+                <label for="doctor">available Doctor:</label>
+                <select id="doctor" name="doctor" >
+                    <option value="">Select Doctor</option>
+                    <!-- Options for available doctors will be dynamically populated here -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="timeSlot">Preferred Time Slot:</label>
+                <input type="date" id="timeSlot" name="timeSlot" >
+            </div>
+            <button type="submit">Book Appointment</button>
+        </form>
+    </div>
+    <script src="/js/patientdashboard.js"></script>
+</body>
+</html>
