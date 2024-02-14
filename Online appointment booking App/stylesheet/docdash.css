@@ -5,16 +5,15 @@ body {
 }
 
 .container {
-    width: 10   0%;
+    width: 50%;
     margin: 20px auto;
     padding: 20px;
-    background-color: #f2f2f2;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
     text-align: center;
+    color: #007bff; 
 }
 
 .appointments-list {
@@ -23,13 +22,15 @@ h2 {
 
 .appointment {
     border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
     background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .appointment p {
-    margin: 5px 0;
+    margin: 10px 0;
 }
 
 .appointment .status {
@@ -37,12 +38,14 @@ h2 {
 }
 
 .approve-btn,
-.reject-btn {
-    padding: 5px 10px;
+.reject-btn,
+.reschedule-btn {
+    padding: 8px 16px;
     margin-right: 10px;
     cursor: pointer;
     border: none;
-    border-radius: 3px;
+    border-radius: 4px;
+    text-transform: uppercase; /* Uppercase button text */
 }
 
 .approve-btn {
@@ -55,7 +58,67 @@ h2 {
     color: #fff;
 }
 
+.reschdeule-btn {
+    background-color: #007bff;
+    color: #fff;
+}
+
 .approve-btn:hover,
-.reject-btn:hover {
+.reject-btn:hover,
+.reschedule-btn:hover {
     opacity: 0.8;
 }
+
+@media (max-width: 768px) {
+    .container {
+        width: 80%;
+    }
+}
+
+#logout-btn {
+    background-color: #f44336; /* Red */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+#logout-btn:hover {
+    background-color: #d32f2f; /* Darker red */
+}
+
+
+
+
+#rescheduleForm label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#rescheduleForm input[type="date"],
+#rescheduleForm input[type="time"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#rescheduleForm button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+#rescheduleForm button:hover {
+    background-color: #0056b3;
+}
+
