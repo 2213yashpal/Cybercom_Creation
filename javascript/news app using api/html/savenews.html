@@ -36,10 +36,14 @@
         }
 
         function removeArticle(id) {
-            let savedArticles = JSON.parse(localStorage.getItem('savedArticles')) || [];
-            savedArticles = savedArticles.filter(article => article.id !== id); // Remove the article with the specified ID
-            localStorage.setItem('savedArticles', JSON.stringify(savedArticles));
-            displaySavedArticles(); 
+            const isConfirmed = confirm("Are you sure you want to remove this article?");
+
+            if (isConfirmed) {
+                let savedArticles = JSON.parse(localStorage.getItem('savedArticles')) || [];
+                savedArticles = savedArticles.filter(article => article.id !== id); // Remove the article with the specified ID
+                localStorage.setItem('savedArticles', JSON.stringify(savedArticles));
+                displaySavedArticles();
+            }
         }
 
         window.onload = function () {
@@ -49,5 +53,3 @@
 </body>
 
 </html>
-
-
