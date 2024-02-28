@@ -5,10 +5,12 @@ ul {
     overflow: hidden;
     background-color: #333;
   }
-  /* .navbar{
+  .navbar {
+    background-color: #333;
     position: fixed;
+    top: 0;
     width: 100%;
-  } */
+}
   li {
     float: left;
   }
@@ -26,6 +28,7 @@ ul {
   }
 
   .container {
+    margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -68,4 +71,80 @@ form button {
 
 form button {
     align-self: flex-start;
+}
+
+#search-bar {
+  margin: 60px 10px 5px 20rem;
+}
+#pagination-container {
+  display: flex;
+  justify-content: center;
+}
+#pagination {
+  margin-top: 20px;
+}
+
+#pagination button {
+  padding: 5px 10px;
+  font-size: 14px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+#pagination button:last-child {
+  margin-right: 0;
+}
+#category-filter{
+  margin-left: 350px;
+
+
+}
+#category-dropdown {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  
+}
+
+/* Style for filter label */
+label {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+#search-bar {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+#search-input {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  flex-grow: .5;
+  margin-right: 10px;
+}
+
+#search-button {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+
+#search-button:hover {
+  background-color: #0056b3;
 }

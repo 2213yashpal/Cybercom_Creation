@@ -66,3 +66,9 @@ a {
 a:hover {
     color: #0056b3; /* Darker blue color on hover */
 }
+a{
+    text-align: center;
+    font-weight: bold;
+    /* margin-left:29rem; */
+    
+}

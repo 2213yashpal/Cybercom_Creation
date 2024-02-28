@@ -18,9 +18,8 @@ async function populateForm(productId) {
 
     if (product) {
         document.getElementById("product-id").value = product.id;
-        document.getElementById("category").value = product.category;
         document.getElementById("title").value = product.title;
-        document.getElementById("images").value = product.image;
+        // document.getElementById("images").value = product.image;
         document.getElementById("price").value = product.price;
         document.getElementById("description").value = product.description;
     } else {
@@ -41,14 +40,12 @@ window.onload = function() {
     }
 };
 
-// Function to update product details
 async function updateProduct(event) {
     event.preventDefault();
 
     const productId = document.getElementById("product-id").value;
-    const category = document.getElementById("category").value;
     const title = document.getElementById("title").value;
-    const images = document.getElementById("images").value;
+    // const images = document.getElementById("images").value;
     const price = document.getElementById("price").value;
     const description = document.getElementById("description").value;
 
@@ -61,9 +58,9 @@ async function updateProduct(event) {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                category,
+                
                 title,
-                image: images,
+                // image: images,
                 price,
                 description
             })
