@@ -21,6 +21,8 @@ ul {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    font-size: 20px;
+    margin-right: 4rem;
   }
   
   li a:hover {
@@ -55,6 +57,44 @@ ul {
 
 .card p {
     margin: 5px 0;
+}
+
+
+
+ .dlt-btn {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 8px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-left: 30px;
+}
+.edit-btn {
+  background-color: #007bff; /* Green */
+  border: none;
+  color: white;
+  padding: 8px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-left: 30px;
+}
+
+
+h3,p {
+    text-align: center; /* Center align text */
 }
 
 form {
@@ -98,24 +138,37 @@ form button {
 #pagination button:last-child {
   margin-right: 0;
 }
-#category-filter{
-  margin-left: 350px;
-
-
+.filter-container {
+  display: flex;
+  align-items: center;
+  margin-left: 330px;
 }
-#category-dropdown {
+
+.filter-container label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.filter-container select {
   padding: 8px;
-  font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  font-size: 16px;
   outline: none;
-  
+  cursor: pointer;
+}
+/* #sort-dropdown label {
+  margin-left: 20px;
+} */
+
+.filter-container select:focus {
+  border-color: #007bff;
 }
 
 /* Style for filter label */
 label {
   font-size: 18px;
-  margin-right: 10px;
+  margin-left: 40px;
 }
 
 #search-bar {

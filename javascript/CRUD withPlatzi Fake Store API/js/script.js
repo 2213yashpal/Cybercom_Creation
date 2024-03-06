@@ -69,12 +69,11 @@ function displayFilteredProducts(filteredProducts) {
         const card = document.createElement('div');
         card.classList.add('card');
         card.innerHTML = `
-            <img src="${product.image}" alt="${product.title}">
             <h3>${product.title}</h3>
             <p>${product.price}</p>
             <p>${product.description}</p>
-            <button onclick="editProduct(${product.id})">Edit</button>
-            <button onclick="deleteProduct(${product.id})">Delete</button>
+            <button class="edit-btn" onclick="editProduct(${product.id})">Edit</button>
+            <button class="dlt-btn" onclick="deleteProduct(${product.id})">Delete</button>
         `;
         container.appendChild(card);
     });
@@ -92,18 +91,18 @@ function displayProducts(products, page) {
         const card = document.createElement('div');
         card.classList.add('card');
         card.innerHTML = `
-            <img src="${product.image}" alt="${product.title}">
             <h3>${product.title}</h3>
             <p>${product.price}</p>
             <p>${product.description}</p>
-            <button onclick="editProduct(${product.id})">Edit</button>
-            <button onclick="deleteProduct(${product.id})">Delete</button>
+            <button class="edit-btn" onclick="editProduct(${product.id})">Edit</button>
+            <button class="dlt-btn" onclick="deleteProduct(${product.id})">Delete</button>
         `;
         container.appendChild(card);
     });
 
     renderPagination(products.length);
 }
+            // <img src="${product.image}" alt="${product.title}">
 
 function renderPagination(totalProducts) {
     const totalPages = Math.ceil(totalProducts / productsPerPage);
@@ -118,6 +117,31 @@ function renderPagination(totalProducts) {
             fetchDataAndDisplay();
         };
         paginationContainer.appendChild(pageButton);
+    }
+}
+
+async function sortProducts(sortBy) {
+    try {
+        let url = 'https://api.escuelajs.co/api/v1/products';
+
+        if (sortBy === 'price') {
+            url += '?_sort=price&_order=asc';
+        } else if (sortBy === 'title') {
+            url += '?_sort=title&_order=asc';
+        }
+
+        const response = await fetch(url);
+        const data = await response.json();
+        const sortedData = data.sort((a, b) => {
+            if (sortBy === 'price') {
+                return a.price - b.price;
+            } else if (sortBy === 'title') {
+                return a.title.localeCompare(b.title);
+            }
+        });
+        displayProducts(data, currentPage);
+    } catch (error) {
+        console.error('Error sorting products:', error);
     }
 }
 

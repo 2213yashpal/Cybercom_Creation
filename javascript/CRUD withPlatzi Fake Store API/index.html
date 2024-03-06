@@ -11,21 +11,28 @@
 <body>
     <div class="navbar">
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="/html/addproduct.html">Add new</a></li>
+            <li><a href="#">Product's</a></li>
+            <li><a href="/html/addproduct.html">Add Product</a></li>
         </ul>
     </div>
     <div id="search-bar">
         <input type="text" id="search-input" placeholder="Search by product title">
         <button id="search-button" onclick="searchProducts()">Search</button>
     </div>
-    <div id="category-filter">
+    <div class="filter-container">
         <label for="category-dropdown">Filter by Category:</label>
         <select id="category-dropdown">
             <option value="">All Categories</option>
             <!-- Categories will be dynamically populated here -->
         </select>
+        <label for="sort-dropdown">Sort by:</label>
+        <select id="sort-dropdown" onchange="sortProducts(this.value)">
+            <option value="">All products</option>
+            <option value="price">Sort by Price</option>
+            <option value="title">Sort by Title</option>
+        </select>
     </div>
+</div>
     <div class="container" id="product-container"></div>
     <div id="pagination-container">
         <div id="pagination"></div>
