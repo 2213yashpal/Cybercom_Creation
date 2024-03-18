@@ -20,3 +20,25 @@ SELECT d.department_name,
     JOIN departments d ON e.department_id = d.department_id
     GROUP BY d.department_name
     ORDER BY d.department_name;
+
+-- 4.	Write a query to return the top 10% of highest paid employees, ordered by salary.
+
+SELECT *
+FROM (
+    SELECT *, NTILE(10) OVER (ORDER BY salary DESC) AS salary_percentile
+    FROM Employees
+) AS emp_with_percentile
+WHERE salary_percentile = 1;
+
+-- 5.	Write a query to return the salary of each employee for their latest salary entry.
+
+SELECT e.id AS employee_id,
+       e.name AS employee_name,
+       s.salary AS latest_salary
+FROM employees e
+JOIN salaries s ON e.id = s.employee_id
+WHERE s.date = (
+    SELECT MAX(date)
+    FROM salaries
+    WHERE employee_id = e.id
+);
