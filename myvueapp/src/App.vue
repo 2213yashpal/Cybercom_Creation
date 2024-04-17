@@ -10,7 +10,7 @@
           <router-link to="/pracbind" class="nav-link">Practice of Binding</router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/calc" class="nav-link">Calculate Tax</router-link>
+          <router-link to="/cart" class="nav-link">Cart</router-link>
         </li>
         <li class="nav-item">
           <router-link to="/counter" class="nav-link">Counter</router-link>
@@ -21,12 +21,21 @@
 
     <!-- Router View -->
     <router-view></router-view>
+
+
+    <!-- <Studentform/>
+    <studentlist/> -->
+    
   </div>
 </template>
 
 <script setup>
 import { RouterLink } from 'vue-router';
 import Iterate from './components/iterate.vue';
+import User from './components/user.vue';
+// import Studentform from './views/studentform.vue';
+// import Studentlist from './views/studentlist.vue';
+
 </script>
 
 <style scoped>

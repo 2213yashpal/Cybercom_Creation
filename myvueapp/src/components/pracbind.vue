@@ -49,7 +49,7 @@ export default {
       email: '',
       gender: '',
       technology: [],
-      dataRetrieved: false // Flag to indicate if data is retrieved
+      dataRetrieved: false
     };
   },
   methods: {
@@ -59,7 +59,6 @@ export default {
       console.log('Gender:', this.gender);
       console.log('Technology:', this.technology);
       
-      // Set the flag to indicate that data is retrieved
       this.dataRetrieved = true;
     },
     toggleDetails() {

@@ -1,24 +1,48 @@
 <template>
-    <h1>{{ count }}</h1>
-    <button v-on:click="count = count + 1">+</button>
-    <button v-on:click="count = count - 1">-</button>
+    <div>
+      <h2>DOM Interaction with ref</h2>
+      <div ref="myDiv" style="width: 200px; height: 100px; background-color: lightblue;"></div><br/>
+      <button @click="changeColor">Change Color</button><br/><br/>
+      <p>{{ count }}</p>
+      <button @click="increment">Increment</button>
 
-</template>
-
-<script>
-export default {
-    name: "counter",
-    data() {
-        return {
-            count: 0, // Changed ; to ,
-        };
-    },
-    watch: {
-        count(val, prev) {
-            if (val > 5 && val > prev) {
-                alert("stop counting")
-            }
+    </div>
+  </template>
+  
+  <script>
+  import { ref } from 'vue';
+  
+  export default {
+    setup() {
+      const myDiv = ref(null);
+      const count = ref(0);
+  
+      const changeColor = () => {
+        if (myDiv.value) {
+          myDiv.value.style.backgroundColor = getRandomColor();
         }
+      };
+  
+      const getRandomColor = () => {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      };
+  
+      function increment() {
+        count.value++;
+      }
+  
+      return {
+        myDiv,
+        count,
+        changeColor,
+        increment
+      };
     }
-}
-</script>
+  }
+  </script>
+  
