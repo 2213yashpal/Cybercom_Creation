@@ -1,14 +1,12 @@
 <template>
     <div class="child-component">
       <header>
-        <slot name="header">
-          <!-- Default header content -->
+        <slot name="header" :email="email">
           <h2>Default Header</h2>
         </slot>
       </header>
       <main>
         <slot name="content">
-          <!-- Default content -->
           <p>Default Content</p>
         </slot>
       </main>
@@ -23,7 +21,11 @@
   
   <script>
   export default {
-    // Any additional logic for the child component can be added here
+    data(){
+      return{
+        email:'yashpal@gmail.com'
+      }
+    }
   };
   </script>
   

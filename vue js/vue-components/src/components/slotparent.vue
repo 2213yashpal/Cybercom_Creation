@@ -1,11 +1,11 @@
 <template>
-    <div>
+    <div class="container">
       <h2>Parent Component</h2>
       <!-- <slotchild/> -->
       <Slotchild>
         <!-- Injecting custom content into named slots -->
-        <template v-slot:header>
-          <h1>This is a Custom Header</h1>
+        <template v-slot:header="slotProps">
+          <h1>This is a Custom Header {{ slotProps.email }}</h1>
         </template>
         <template v-slot:content>
           <p>This is Custom Content</p>
@@ -19,12 +19,19 @@
   
   <script>
 import Slotchild from './slotchild.vue';
+import card from './card.vue';
   
   export default {
     components: {
-        Slotchild
+        Slotchild,
+        card
       
     }
   };
   </script>
   
+  <style scoped>
+  .container{
+    margin-top: 90px;
+  }
+</style>

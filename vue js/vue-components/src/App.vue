@@ -1,29 +1,23 @@
 <!-- App.vue -->
 
 <template>
-  <br>
-   <nav>
-      <router-link to="/">Home</router-link> <!-- Link to home page -->
-      <router-link to="/">Home</router-link> <!-- Link to home page -->
+      <navbar/>
 
-    </nav>
-    <br><br>
-    <slotparent/>
-  <div>
+  <div class="container">
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Slotparent from './components/slotparent.vue'
-import home from './views/home.vue'
+
+import navbar from './components/navbar.vue';
 
 
 export default {
   name: 'App',
   components: {
-    home,
-    Slotparent
+  
+    navbar
    
 },
 
@@ -31,8 +25,9 @@ export default {
 </script>
 
 
-<style scoped>
-.nav .router-link {
-  margin-right: 50px;
+<style>
+.container{
+  margin-top: 90x;
 }
+
 </style>
